@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+  ~ @Author:    Dan Lewis (dan.lewis@deploy.co.uk)
+  ~ @Copyright: 2024 Deploy Ecommerce (https://www.deploy.co.uk)
+  ~ @Package:   DeployEcommerce_RestrictPayment
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Model\PaymentInformationManagement">
+        <plugin name="deployecommerce_restrictpayment_plugin_checkout_model_paymentinformation"
+                type="DeployEcommerce\RestrictPayment\Plugin\Checkout\Model\PaymentInformationManagement"/>
+    </type>
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="deployecommerce_restrictpayment_plugin_checkout_model_shippinginformation"
+                type="DeployEcommerce\RestrictPayment\Plugin\Checkout\Model\ShippingInformationManagement"/>
+    </type>
+</config>

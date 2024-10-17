@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<!--
+  ~ @Author:    Dan Lewis (dan.lewis@deploy.co.uk)
+  ~ @Copyright: 2024 Deploy Ecommerce (https://www.deploy.co.uk)
+  ~ @Package:   DeployEcommerce_RestrictPayment
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="deploy" translate="label" sortOrder="2">
+            <label>Deploy Ecommerce</label>
+        </tab>
+        <section id="restrict_payment" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1"
+                 translate="label">
+            <label>Restrict Payments</label>
+            <tab>deploy</tab>
+            <resource>DeployEcommerce_RestrictPayment::config_deployecommerce_restrictpayment</resource>
+            <group id="general_settings" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1"
+                   translate="label">
+                <label>General Settings</label>
+                <field id="enable" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1"
+                       translate="label">
+                    <label>Enable Module</label>
+                    <comment/>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="restrict_payment" sortOrder="2" showInWebsite="1" showInStore="1" showInDefault="1"
+                   translate="label">
+                <label>Payment Restrictions</label>
+                <field id="threshold" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Threshold Amount</label>
+                </field>
+                <field id="method" translate="Module" type="multiselect" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Restricted Payment Methods</label>
+                    <source_model>DeployEcommerce\RestrictPayment\Model\Config\Source\ConfigOption</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
