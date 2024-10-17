@@ -17,6 +17,11 @@ use Magento\Store\Model\StoreManagerInterface;
 class ConfigOption implements OptionSourceInterface
 {
 
+    /**
+     * @param PaymentMethodListInterface $paymentMethodList
+     * @param Settings $settings
+     * @param StoreManagerInterface $storeManager
+     */
     public function __construct(
         protected PaymentMethodListInterface $paymentMethodList,
         protected Settings $settings,
